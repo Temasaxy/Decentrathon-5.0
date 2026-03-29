@@ -1,25 +1,23 @@
 import React from 'react';
-import Image from "next/image"; 
+import Link from 'next/link';
 export default function Navbar() {
   return (
-    <nav>
-      <ul className="flex rounded-xl flex-row mt-16 p-4 bg-black/50 backdrop-saturate-200 shadow-xl font-mono">
-        <li className='px-32'>
-            <a href="" className='text-fuchsia-500 hover:text-white transition delay-100 duration-200 ease-in-out'>Главная</a>
-        </li>
-        <li className='pr-32'>
-            <a href="" className='text-fuchsia-500 hover:text-white transition delay-100 duration-200 ease-in-out'>Команда</a>
-        </li>
-        <li className='pr-32'>
-            <a href="" className='text-fuchsia-500 hover:text-white transition delay-100 duration-200 ease-in-out'>Информация</a>
-        </li>
-        <li>
-            <a href="" className='text-fuchsia-500 hover:text-white transition delay-100 duration-200 ease-in-out'>Особенности</a>
-        </li>
-        <li className='px-32 '>
-            <a href="" className='text-fuchsia-500 hover:text-white transition delay-100 duration-200 ease-in-out'>Связь</a>
-        </li>
-      </ul>
+    <nav className='flex w-full h-20 bg-black/40 backdrop-blur-xl border-b border-indigo-500/20 justify-center items-center gap-36 fixed top-0 z-50 font-extrabold'>
+        <div className='border-0 transition-all delay-150 duration-200 ease-in-out hover:-translate-y-1'>
+            <Link href="/Main/Main" className='text-2xl text-white p-2 bg-none  rounded-3xl transition-all delay-150 duration-200 ease-in-out hover:text-indigo-500'>Главная</Link>
+        </div>
+        <div className='border-0 transition-all delay-150 duration-200 ease-in-out hover:-translate-y-1'>
+            <Link href="/team/team" className='text-2xl text-white p-2 bg-none  rounded-3xl transition-all delay-150 duration-200 ease-in-out hover:text-indigo-500'>Команда</Link>
+        </div>
+        <div className='border-0 transition-all delay-150 duration-200 ease-in-out hover:-translate-y-1'>
+            <Link href="/special" className='text-2xl text-white p-2 bg-none  rounded-3xl transition-all delay-150 duration-200 ease-in-out hover:text-indigo-500'>Информация</Link>
+        </div>
+        <div className='border-0 transition-all delay-150 duration-200 ease-in-out hover:-translate-y-1'>
+            <Link href="/team" className='text-2xl text-white p-2 bg-none  rounded-3xl transition-all delay-150 duration-200 ease-in-out hover:text-indigo-500'>Особенности</Link>
+        </div>
+        <div className='border-0 transition-all delay-150 duration-200 ease-in-out hover:-translate-y-1'>
+            <Link href="/network" className='text-2xl text-white p-2 bg-none  rounded-3xl transition-all delay-150 duration-200 ease-in-out hover:text-indigo-500'>Связь</Link>
+        </div>
     </nav>
   );
 }
