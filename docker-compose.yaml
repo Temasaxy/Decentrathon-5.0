@@ -1,0 +1,28 @@
+services:
+  caddy:
+    image: caddy:latest
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443/udp"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - frontend
+      - backend
+
+  frontend:
+    build: 
+      context: ./frontend
+    restart: always
+
+  backend:
+    build: 
+      context: ./backend
+    restart: always
+
+volumes:
+  caddy_data:
